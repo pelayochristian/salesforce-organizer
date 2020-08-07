@@ -1,6 +1,4 @@
-import React from "react";
-import "./App.css";
-// import Navbar from "./components/Navbar";
+// import styles from "../styles/Home.module.css";
 
 function Navbar() {
   return (
@@ -17,13 +15,3 @@ function Navbar() {
     </div>
   );
 }
-
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-    </div>
-  );
-}
-
-export default App;
