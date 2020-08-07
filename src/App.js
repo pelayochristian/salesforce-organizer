@@ -1,22 +1,19 @@
 import React from "react";
-import Header from "./components/layout/Header";
-import Organization from "./pages/Organization";
-import Home from "./pages/Home";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Header from "./component/layout/Header";
+import Organization from "./pages/Organization";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <div>
-          <Header />
-        </div>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/organization" component={Organization} />
-        </Switch>
-      </Router>
+      <Header />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/organization" component={Organization} />
+      </Switch>
     </div>
   );
 }

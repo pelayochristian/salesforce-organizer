@@ -1,5 +1,5 @@
 import React from "react";
-import OrganizationList from "../components/OrganizationList";
+import OrganizationList from "../component/OrganizationList";
 
 function Home() {
   return (

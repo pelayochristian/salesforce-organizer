@@ -1,5 +1,5 @@
 import React from "react";
-import OrganizationForm from "../components/OrganizationForm";
+import OrganizationForm from "../component/OrganizationForm";
 
 function Organization() {
   return (
