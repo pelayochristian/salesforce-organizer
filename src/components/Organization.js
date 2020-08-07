@@ -1,3 +1,5 @@
+import React from "react";
+
 function Organization(props) {
   return (
     <div class="card border-primary mb-3">

@@ -1,3 +1,4 @@
+import React from "react";
 import Organization from "./Organization";
 import data from "./data/org_data.json";
 
