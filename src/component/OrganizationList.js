@@ -1,19 +1,29 @@
-import React from "react";
-import Organization from "./Organization";
-// import data from "./data/org_data.json";
+import React, { useState, useEffect } from 'react';
+import Organization from './Organization';
+import OrganizationService from '../services/OrganizationService';
 
 function OrgList() {
-  const data = [
-    { name: "AUG_DEV", username: "1234", password: "123w" },
-    { name: "AUG_QA", username: "1234", password: "123w" },
-  ];
+    // OrgList State
+    const [orgList, setOrgList] = useState([]);
 
-  return (
-    <div>
-      {data.map((org, index) => (
-        <Organization key={index} index={index} org={org} />
-      ))}
-    </div>
-  );
+    useEffect(() => {
+        async function loadOrgList() {
+            await OrganizationService.findAll().then((data) => {
+                setOrgList(data);
+            });
+
+            OrganizationService.remove('59a18f2b-2d82-424c-a942-958b09258a1a');
+        }
+
+        loadOrgList();
+    }, []);
+
+    return (
+        <div>
+            {orgList.map((org, index) => (
+                <Organization key={index} index={index} org={org} />
+            ))}
+        </div>
+    );
 }
 export default OrgList;

@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-      <a class="navbar-brand" href="#">
-        Navbar
-      </a>
-      <div class="ml-auto">
-        <Link to={"/organization"}>
-          <button type="submit" class="btn btn-primary mr-3">
-            About
-          </button>
-        </Link>
-      </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <Link to={"/"}>
+        <a class="navbar-brand">Saleforce Oranizer</a>
+      </Link>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <Link to={"/organization"}>
+            <a className="nav-link">
+              Add <span class="sr-only">(current)</span>
+            </a>
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }
