@@ -39,7 +39,6 @@ const save = (data) => {
                     let toInsertData = {};
                     toInsertData[orgId] = data;
                     value.push(toInsertData);
-                    console.log(value);
                     chrome.storage.sync.set({
                         organization: value,
                     });
@@ -60,9 +59,9 @@ const isExist = (id) => {
     let status = new Promise((resolve, reject) => {
         findAll().then(
             (data) => {
-                if (!data) return;
-
                 let returnObj = new Map();
+                if (!data) return;
+                if (data.length === 0) resolve(returnObj.set(false, data));
                 data.forEach((element) => {
                     Object.entries(element).map(([key, value]) => {
                         if (id === key) {

@@ -13,6 +13,7 @@ function OrganizationForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!value) return;
+        console.log(value);
         OrganizationService.save(value);
     };
 
